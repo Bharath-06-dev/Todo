@@ -1,4 +1,4 @@
-//getting data of todo from storage / creating an empty array
+//getting data of todo from localstorage / creating an empty array
  
 let todo = JSON.parse(localStorage.getItem("todos")) || [];
 
@@ -6,7 +6,7 @@ let count = todo.length;
 console.log(count);
 
 
-
+//variables needed
 const todoInput = document.getElementById("tdInput");
 const todoList = document.getElementById("todo");
 const todoCount = document.getElementById("tdCount");
@@ -17,8 +17,6 @@ const deletebtn=document.getElementById("deleteAll");
 const sortbtn=document.getElementById("sort");
 const countplace=document.getElementById("count");
 
-
-//
 let sort =false;//increasing true=>decreasing
 
 
@@ -40,6 +38,7 @@ document.addEventListener("DOMContentLoaded",
     }
 );
 
+//adding a new task 
 function addTask(){
     const date = new Date();
     const newTask= todoInput.value.trim();
@@ -55,12 +54,15 @@ function addTask(){
     
 }
 
+//deleting all tasks
 function deleteAllTask(){
     todo=[];
     saveToLocalStrg();
     count=0;
     displayTasks();
 }
+
+//edit task
 function editTask(index){
     console.log("hi");
     const todoitem=document.getElementById(`todo-${index}`);
@@ -84,12 +86,14 @@ function editTask(index){
 
 }
 
+//pin a task
 function PinMe(index){
     todo[index].pinned=(todo[index].pinned==1)?2:1;
     displayTasks();
 
 }
 
+//fn to alter sort button
 function sortit(){
     sort=!sort;
     if(sort){
@@ -101,10 +105,11 @@ function sortit(){
     displayTasks();
 }
 
+//display tasks fn 
 function displayTasks(){
     let todisplay = todo;
 
-    // Sort for display only
+    //if sort == true then revers the array and display 
     if (sort) {
         todisplay.reverse();
         sort=!sort;
@@ -116,6 +121,7 @@ function displayTasks(){
         
             const p=document.createElement("p");
             p.className="element";
+         //creating a <p> elemrnt to display the tasks
             p.innerHTML = `
                 
                 <div class="todos">
@@ -157,6 +163,7 @@ function displayTasks(){
         }
         
     });
+ //to alter the tasks behaviour when hovered on them
     const elements=document.querySelectorAll(".element");
     elements.forEach(element=>{
         element.addEventListener("mouseenter",()=>{
@@ -172,10 +179,12 @@ function displayTasks(){
     
 }
 
+//fn to save the tasks to local storage 
 function saveToLocalStrg(){
     localStorage.setItem("todos",JSON.stringify(todo));
 }
 
+//function to toggle checkbox
 function toggletask(index){
     todo[index].disabled=!todo[index].disabled;
     saveToLocalStrg();
