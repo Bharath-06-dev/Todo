@@ -13,9 +13,9 @@ Feautres -
  * There is a delete button which deletes all the tasks present.
  * The web page has a responsive layout.
 
-The appicaition can be run by opening this link on any browser link:
+The appicaition can be run by opening this link on any browser link: https://todo-theta-self.vercel.app/
 
-Here are some Screen Shots of the Application :
+
 
 
 
