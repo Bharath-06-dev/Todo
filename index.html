@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Your To-Do</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="imgs/favicon.webp">
+        
+    </head>
+    <body>
+        <section class="todo">
+           <h2>TO-DO</h2>
+           <div class="input">
+            <input type="text" id="tdInput" class="tdInput" placeholder="Add a Task">
+            <button id="addBtn">Add</button>
+            <button id="sort" onclick="sortit()">Sort By Date ▲</button>
+           </div>
+           <ul class="scroll">
+                <li id="todo" class="disabled"></li>
+           </ul>
+           <div class="count">
+            <hr>
+            <div class="count-place">
+                <p><span id="count">0</span> Items</p>
+                <button id="deleteAll">Delete</button>
+            </div>
+           </div>
+        </section>
+        
+        <script src="index.js"></script>
+    </body>
+</html>
