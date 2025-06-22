@@ -197,9 +197,6 @@ input[type="checkbox"]:checked::before{
     justify-content: space-evenly;
     padding: 0.1rem;
     cursor: pointer;
-
-
-    
 }
 
 
