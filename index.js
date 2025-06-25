@@ -110,9 +110,8 @@ function displayTasks(){
     let todisplay = todo;
 
     //if sort == true then revers the array and display 
-    if (sort) {
+    if (sortbtn.textContent=="Sort By Date ▼") {
         todisplay.reverse();
-        sort=!sort;
     }
     todoList.innerHTML="";
     todisplay.forEach((item,index) => {
