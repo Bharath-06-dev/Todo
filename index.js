@@ -107,7 +107,7 @@ function sortit(){
 
 //display tasks fn 
 function displayTasks(){
-    let todisplay = todo;
+    let todisplay =Array.from(todo);
 
     //if sort == true then revers the array and display 
     if (sortbtn.textContent=="Sort By Date ▼") {
